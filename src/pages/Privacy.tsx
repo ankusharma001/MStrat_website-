@@ -28,10 +28,10 @@ const Privacy = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Privacy & Security
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Your financial privacy and security are our top priorities. Learn how we protect 
             your data with industry-leading security measures and transparent privacy practices.
           </p>
@@ -46,7 +46,7 @@ const Privacy = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl font-bold text-white text-center mb-8"
+            className="text-3xl font-bold text-gray-900 text-center mb-8"
           >
             Security Features
           </motion.h2>
@@ -78,11 +78,11 @@ const Privacy = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                className="backdrop-blur-md bg-white/80 rounded-2xl p-6 border border-green-200/50 hover:bg-white/90 transition-all duration-300 shadow-lg"
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-white/70 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -93,11 +93,11 @@ const Privacy = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="backdrop-blur-md bg-white/10 rounded-2xl p-8 border border-white/20 mb-16"
+          className="backdrop-blur-md bg-white/80 rounded-2xl p-8 border border-green-200/50 mb-16 shadow-lg"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl font-bold text-white mb-8 text-center"
+            className="text-3xl font-bold text-gray-900 mb-8 text-center"
           >
             Our Privacy Principles
           </motion.h2>
@@ -128,10 +128,10 @@ const Privacy = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="border-l-4 border-purple-400 pl-6 py-2"
+                className="border-l-4 border-green-500 pl-6 py-2"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{principle.title}</h3>
-                <p className="text-white/70 leading-relaxed">{principle.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{principle.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{principle.description}</p>
               </motion.div>
             ))}
           </div>
@@ -146,7 +146,7 @@ const Privacy = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl font-bold text-white mb-8"
+            className="text-3xl font-bold text-gray-900 mb-8"
           >
             Compliance & Standards
           </motion.h2>
@@ -174,27 +174,27 @@ const Privacy = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
-                className="backdrop-blur-md bg-white/10 rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                className="backdrop-blur-md bg-white/80 rounded-xl p-4 border border-green-200/50 hover:bg-white/90 transition-all duration-300 shadow-lg"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{cert.title}</h3>
-                <p className="text-white/70 text-sm">{cert.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{cert.title}</h3>
+                <p className="text-gray-600 text-sm">{cert.description}</p>
               </motion.div>
             ))}
           </div>
 
           <motion.div
             variants={itemVariants}
-            className="mt-12 backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20"
+            className="mt-12 backdrop-blur-md bg-white/80 rounded-2xl p-6 border border-green-200/50 shadow-lg"
           >
-            <h3 className="text-xl font-semibold text-white mb-4">Questions About Privacy?</h3>
-            <p className="text-white/70 mb-4">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Questions About Privacy?</h3>
+            <p className="text-gray-600 mb-4">
               We're here to help. If you have any questions about how we protect your privacy 
               and secure your data, please don't hesitate to reach out.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+              className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
             >
               Contact Privacy Team
             </motion.button>
