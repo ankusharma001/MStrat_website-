@@ -17,9 +17,9 @@ const Layout = ({ children }: LayoutProps) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-stone-50 to-gray-100">
       {/* Fixed Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/10 border-b border-white/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/90 border-b border-green-200/50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -28,10 +28,10 @@ const Layout = ({ children }: LayoutProps) => {
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center space-x-2"
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-md">
                 <span className="text-white font-bold text-lg">F</span>
               </div>
-              <span className="text-white font-semibold text-xl">FinanceTracker</span>
+              <span className="text-gray-800 font-semibold text-xl">FinanceTracker</span>
             </motion.div>
 
             {/* Navigation Links */}
@@ -46,7 +46,7 @@ const Layout = ({ children }: LayoutProps) => {
                     className={`relative z-10 text-sm font-medium ${
                       location.pathname === item.path
                         ? 'text-white'
-                        : 'text-white/70 hover:text-white'
+                        : 'text-gray-700 hover:text-gray-900'
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -57,7 +57,7 @@ const Layout = ({ children }: LayoutProps) => {
                   {location.pathname === item.path && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-white/20 rounded-lg backdrop-blur-sm"
+                      className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-md"
                       initial={false}
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
