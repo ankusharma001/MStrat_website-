@@ -86,7 +86,8 @@ const Home = () => {
                           <span className="font-medium">Monthly Savings</span>
                           <TrendingUp className="h-5 w-5 text-green-500" />
                         </div>
-                        <div className="text-2xl font-bold text-stone-800 mt-1">$1,247</div>
+                        <div className="text-2xl font-bold text-stone-800 mt-1">₹1,247
+</div>
                       </div>
                     </div>
                   </div>
