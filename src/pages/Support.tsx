@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
@@ -40,7 +39,7 @@ const Support = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -48,24 +47,25 @@ const Support = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
+
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/sharmankush004a@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/sharmankush004a@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          _replyto: formData.email,
+          _captcha: 'false',
+          _subject: 'New Support Query from MStrat',
+          _template: 'table'
         }),
       });
 
@@ -104,7 +104,7 @@ const Support = () => {
             Get in Touch
           </h1>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-            Have questions about MStrat? We'd love to hear from you. 
+            Have questions about MStrat? We'd love to hear from you.
             Send us a message and we'll respond as soon as possible.
           </p>
         </motion.div>
@@ -119,31 +119,29 @@ const Support = () => {
           >
             <div className="bg-white rounded-3xl p-10 shadow-lg border border-stone-100">
               <h2 className="text-3xl font-semibold text-stone-800 mb-8">Contact Information</h2>
-              
+
               <div className="space-y-8">
-                {[
-                  {
-                    icon: Mail,
-                    title: "Email",
-                    description: "Send us an email anytime",
-                    contact: "support@mstrat.com",
-                    color: "from-green-400 to-green-500"
-                  },
-                  {
-                    icon: Clock,
-                    title: "Response Time",
-                    description: "We typically respond within",
-                    contact: "24 hours",
-                    color: "from-stone-400 to-stone-500"
-                  },
-                  {
-                    icon: Globe,
-                    title: "Availability",
-                    description: "We're here to help",
-                    contact: "24/7 Support",
-                    color: "from-green-500 to-green-600"
-                  }
-                ].map((item, index) => (
+                {[{
+                  icon: Mail,
+                  title: "Email",
+                  description: "Send us an email anytime",
+                  contact: "sharmankush004a@gmail.com",
+                  color: "from-green-400 to-green-500"
+                },
+                {
+                  icon: Clock,
+                  title: "Response Time",
+                  description: "We typically respond within",
+                  contact: "24 hours",
+                  color: "from-stone-400 to-stone-500"
+                },
+                {
+                  icon: Globe,
+                  title: "Availability",
+                  description: "We're here to help",
+                  contact: "24/7 Support",
+                  color: "from-green-500 to-green-600"
+                }].map((item, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 10 }}
@@ -173,7 +171,7 @@ const Support = () => {
           >
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-10 shadow-lg border border-stone-100">
               <h2 className="text-3xl font-semibold text-stone-800 mb-8">Send us a Message</h2>
-              
+
               <div className="space-y-6">
                 {/* Name Field */}
                 <div>
@@ -187,17 +185,11 @@ const Support = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full px-6 py-4 bg-stone-50 border-2 ${
-                      errors.name ? 'border-red-400' : 'border-transparent'
-                    } rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200`}
+                    className={`w-full px-6 py-4 bg-stone-50 border-2 ${errors.name ? 'border-red-400' : 'border-transparent'} rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-200`}
                     placeholder="Your full name"
                   />
                   {errors.name && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="mt-2 text-sm text-red-600"
-                    >
+                    <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-2 text-sm text-red-600">
                       {errors.name}
                     </motion.p>
                   )}
@@ -215,17 +207,11 @@ const Support = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`w-full px-6 py-4 bg-stone-50 border-2 ${
-                      errors.email ? 'border-red-400' : 'border-transparent'
-                    } rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200`}
+                    className={`w-full px-6 py-4 bg-stone-50 border-2 ${errors.email ? 'border-red-400' : 'border-transparent'} rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-200`}
                     placeholder="your.email@example.com"
                   />
                   {errors.email && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="mt-2 text-sm text-red-600"
-                    >
+                    <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-2 text-sm text-red-600">
                       {errors.email}
                     </motion.p>
                   )}
@@ -240,46 +226,28 @@ const Support = () => {
                     whileFocus={{ scale: 1.01 }}
                     id="message"
                     name="message"
+                    rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    rows={6}
-                    className={`w-full px-6 py-4 bg-stone-50 border-2 ${
-                      errors.message ? 'border-red-400' : 'border-transparent'
-                    } rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition-all duration-200 resize-none`}
-                    placeholder="Tell us how we can help you..."
+                    className={`w-full px-6 py-4 bg-stone-50 border-2 ${errors.message ? 'border-red-400' : 'border-transparent'} rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-200`}
+                    placeholder="Type your message here..."
                   />
                   {errors.message && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="mt-2 text-sm text-red-600"
-                    >
+                    <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-2 text-sm text-red-600">
                       {errors.message}
                     </motion.p>
                   )}
                 </div>
 
-                {/* Submit Button */}
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                  className={`w-full py-4 px-6 rounded-2xl font-semibold text-white transition-all duration-200 ${
-                    isSubmitting
-                      ? 'bg-stone-400 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 shadow-lg hover:shadow-xl'
-                  }`}
-                >
-                  {isSubmitting ? (
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      <span>Sending...</span>
-                    </div>
-                  ) : (
-                    'Send Message'
-                  )}
-                </motion.button>
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
+                </div>
               </div>
             </form>
           </motion.div>
