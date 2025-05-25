@@ -150,12 +150,12 @@ const Home = () => {
                 icon: Shield,
                 color: "from-stone-500 to-stone-600"
               },
-              {
-                title: "Smart Reminders",
-                description: "Never miss a bill payment with intelligent notifications and spending limit alerts.",
-                icon: Clock,
-                color: "from-green-400 to-green-500"
-              },
+              // {
+              //   title: "Smart Reminders",
+              //   description: "Never miss a bill payment with intelligent notifications and spending limit alerts.",
+              //   icon: Clock,
+              //   color: "from-green-400 to-green-500"
+              // },
               {
                 title: "Goal Management",
                 description: "Set and track financial goals with visual progress indicators and milestone celebrations.",

@@ -54,12 +54,12 @@ const Privacy = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              {
-                icon: Lock,
-                title: "Bank-Level Encryption",
-                description: "All your data is protected with AES-256 encryption, the same standard used by banks and financial institutions worldwide.",
-                color: "from-green-400 to-green-500"
-              },
+              // {
+              //   icon: Lock,
+              //   title: "Bank-Level Encryption",
+              //   description: "All your data is protected with AES-256 encryption, the same standard used by banks and financial institutions worldwide.",
+              //   color: "from-green-400 to-green-500"
+              // },
               {
                 icon: Eye,
                 title: "Zero-Knowledge Architecture",
@@ -151,14 +151,14 @@ const Privacy = () => {
           animate="visible"
           className="text-center"
         >
-          <motion.h2
+          {/* <motion.h2
             variants={itemVariants}
             className="text-4xl font-bold text-stone-800 mb-12"
           >
             Compliance & Standards
-          </motion.h2>
+          </motion.h2> */}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
               {
                 title: "SOC 2 Type II",
@@ -198,7 +198,7 @@ const Privacy = () => {
                 <p className="text-stone-600 text-sm">{cert.description}</p>
               </motion.div>
             ))}
-          </div>
+          </div> */}
 
           <motion.div
             variants={itemVariants}
