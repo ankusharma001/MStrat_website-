@@ -29,9 +29,9 @@ const Layout = ({ children }: LayoutProps) => {
               className="flex items-center space-x-3"
             >
               <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">F</span>
+                <span className="text-white font-bold text-xl">M</span>
               </div>
-              <span className="text-stone-800 font-bold text-2xl tracking-tight">FinanceTracker</span>
+              <span className="text-stone-800 font-bold text-2xl tracking-tight">MStrat</span>
             </motion.div>
 
             {/* Navigation Links */}
@@ -55,15 +55,6 @@ const Layout = ({ children }: LayoutProps) => {
                   </motion.div>
                 </Link>
               ))}
-              
-              {/* Get in touch button */}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="ml-4 px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 text-white rounded-2xl font-medium text-sm shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Get in touch
-              </motion.button>
             </div>
           </div>
         </div>

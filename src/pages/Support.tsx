@@ -55,15 +55,39 @@ const Support = () => {
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', message: '' });
-      
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. We'll get back to you soon.",
+    try {
+      const response = await fetch('https://formspree.io/f/sharmankush004a@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
       });
-    }, 1500);
+
+      if (response.ok) {
+        setFormData({ name: '', email: '', message: '' });
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. We'll get back to you soon.",
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -80,7 +104,7 @@ const Support = () => {
             Get in Touch
           </h1>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-            Have questions about FinanceTracker? We'd love to hear from you. 
+            Have questions about MStrat? We'd love to hear from you. 
             Send us a message and we'll respond as soon as possible.
           </p>
         </motion.div>
@@ -102,7 +126,7 @@ const Support = () => {
                     icon: Mail,
                     title: "Email",
                     description: "Send us an email anytime",
-                    contact: "support@financetracker.com",
+                    contact: "support@mstrat.com",
                     color: "from-green-400 to-green-500"
                   },
                   {

@@ -42,19 +42,14 @@ const Home = () => {
                 </p>
               </div>
 
-              {/* Email signup */}
+              {/* Call to action */}
               <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 bg-white border border-stone-200 rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent shadow-sm"
-                />
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="px-8 py-4 bg-stone-800 text-white rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Send
+                  Get Started
                 </motion.button>
               </div>
             </motion.div>
@@ -74,7 +69,7 @@ const Home = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center">
                         <BarChart3 className="h-6 w-6 text-white" />
                       </div>
-                      <span className="text-stone-800 font-semibold text-lg">FinanceTracker</span>
+                      <span className="text-stone-800 font-semibold text-lg">MStrat</span>
                     </div>
                     
                     <div className="space-y-4">
@@ -103,7 +98,7 @@ const Home = () => {
                   transition={{ duration: 3, repeat: Infinity }}
                   className="absolute -top-4 -right-4 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl px-4 py-2 shadow-lg"
                 >
-                  <span className="text-white font-medium text-sm">Smart AI</span>
+                  <span className="text-white font-medium text-sm">Expert Tools</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -121,7 +116,7 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-stone-800 mb-6">
-              How FinanceTracker Helps You Grow
+              How MStrat Helps You Grow
             </h2>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto">
               Transforming personal finance management with intelligent tools and insights.
