@@ -1,15 +1,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Shield, TrendingUp, Clock, Target, BarChart3 } from 'lucide-react';
+import { Smartphone, Shield, TrendingUp, Clock, Target, BarChart3, CheckCircle } from 'lucide-react';
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="px-6 lg:px-8 py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -17,46 +17,44 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium"
-              >
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Coming Soon to iOS</span>
-              </motion.div>
-
-              {/* Main Heading */}
-              <div className="space-y-4">
-                <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight">
-                  Your Personal
-                  <span className="block text-green-600">Finance Expert</span>
-                  <span className="block text-stone-600">in Your Pocket</span>
+              <div className="space-y-6">
+                <h1 className="text-6xl sm:text-7xl font-bold text-stone-800 leading-tight">
+                  Find{' '}
+                  <span className="relative">
+                    <span className="bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent">
+                      smart
+                    </span>
+                    <motion.div
+                      className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-green-500 rounded-full"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 0.5, duration: 0.8 }}
+                    />
+                  </span>{' '}
+                  financial
+                  <br />
+                  insights & tools
                 </h1>
                 
-                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-                  Identify spending patterns instantly, get customized budgeting guides, and manage 
-                  your finances with smart insights - all in one beautifully designed app.
+                <p className="text-xl text-stone-600 leading-relaxed max-w-lg">
+                  Do you want to learn techniques that will make your 
+                  financial management or budgeting journey easier?
                 </p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* Email signup */}
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-6 py-4 bg-white border border-stone-200 rounded-2xl text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent shadow-sm"
+                />
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 bg-stone-800 text-white rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Get Notified at Launch
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-green-500 text-green-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-50 transition-all duration-300"
-                >
-                  Learn More
+                  Send
                 </motion.button>
               </div>
             </motion.div>
@@ -68,39 +66,44 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-8 shadow-2xl">
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Smartphone className="h-8 w-8 text-white" />
-                    <span className="text-white font-semibold text-lg">FinanceTracker</span>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="text-white/90">Point your camera at any expense</div>
-                    <div className="text-white/90">for instant categorization</div>
-                    <div className="bg-white/20 rounded-lg p-3 mt-4">
-                      <div className="flex items-center justify-between text-white">
-                        <span>Smart Recognition</span>
-                        <TrendingUp className="h-5 w-5" />
+              <div className="relative">
+                {/* Main card */}
+                <div className="bg-white rounded-3xl p-8 shadow-xl border border-stone-100">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center">
+                        <BarChart3 className="h-6 w-6 text-white" />
+                      </div>
+                      <span className="text-stone-800 font-semibold text-lg">FinanceTracker</span>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <span className="text-stone-600">Smart expense tracking</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <span className="text-stone-600">Budget optimization</span>
+                      </div>
+                      <div className="bg-stone-50 rounded-2xl p-4 mt-4">
+                        <div className="flex items-center justify-between text-stone-700">
+                          <span className="font-medium">Monthly Savings</span>
+                          <TrendingUp className="h-5 w-5 text-green-500" />
+                        </div>
+                        <div className="text-2xl font-bold text-stone-800 mt-1">$1,247</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                {/* Floating Elements */}
+
+                {/* Floating badge */}
                 <motion.div
-                  animate={{ y: [-10, 10, -10] }}
+                  animate={{ y: [-5, 5, -5] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 bg-yellow-300 rounded-full w-16 h-16 flex items-center justify-center shadow-lg"
+                  className="absolute -top-4 -right-4 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl px-4 py-2 shadow-lg"
                 >
-                  <span className="text-2xl">💡</span>
-                </motion.div>
-                
-                <motion.div
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -bottom-4 -left-4 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
-                >
-                  <BarChart3 className="h-6 w-6 text-green-600" />
+                  <span className="text-white font-medium text-sm">Smart AI</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -109,19 +112,19 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-stone-50 to-gray-100">
-        <div className="max-w-6xl mx-auto">
+      <section className="px-6 lg:px-8 py-24 bg-gradient-to-br from-stone-50 to-green-50">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-5xl font-bold text-stone-800 mb-6">
               How FinanceTracker Helps You Grow
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transforming personal finance management with real-time expense tracking and intelligent insights.
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              Transforming personal finance management with intelligent tools and insights.
             </p>
           </motion.div>
 
@@ -143,25 +146,25 @@ const Home = () => {
                 title: "Real-time Insights",
                 description: "Monitor your financial health with real-time analytics and spending trend visualization.",
                 icon: BarChart3,
-                color: "from-gray-400 to-gray-500"
+                color: "from-green-500 to-green-600"
               },
               {
                 title: "Secure & Private",
                 description: "Your financial data stays protected with bank-level security and end-to-end encryption.",
                 icon: Shield,
-                color: "from-green-500 to-green-600"
+                color: "from-stone-500 to-stone-600"
               },
               {
                 title: "Smart Reminders",
                 description: "Never miss a bill payment with intelligent notifications and spending limit alerts.",
                 icon: Clock,
-                color: "from-stone-500 to-stone-600"
+                color: "from-green-400 to-green-500"
               },
               {
                 title: "Goal Management",
                 description: "Set and track financial goals with visual progress indicators and milestone celebrations.",
-                icon: Target,
-                color: "from-gray-500 to-gray-600"
+                icon: Smartphone,
+                color: "from-stone-400 to-stone-500"
               }
             ].map((feature, index) => (
               <motion.div
@@ -169,14 +172,14 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-stone-100"
               >
-                <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6 shadow-md`}>
-                  <feature.icon className="h-6 w-6 text-white" />
+                <div className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
+                  <feature.icon className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-stone-800 mb-3">{feature.title}</h3>
+                <p className="text-stone-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -184,25 +187,25 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="px-6 lg:px-8 py-24">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-12 shadow-2xl"
+            className="bg-gradient-to-br from-green-400 to-green-500 rounded-3xl p-16 shadow-2xl"
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-5xl font-bold text-white mb-6">
               Ready to Transform Your Financial Life?
             </h2>
-            <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-green-50 mb-8 max-w-2xl mx-auto">
               Join thousands of users who are already taking control of their finances with smart, 
               AI-powered insights and beautiful, intuitive design.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white text-green-600 px-10 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Get Early Access
             </motion.button>
