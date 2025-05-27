@@ -196,7 +196,7 @@ const Home = () => {
             </h2>
             <p className="text-xl text-green-50 mb-8 max-w-2xl mx-auto">
               Join thousands of users who are already taking control of their finances with smart, 
-              AI-powered insights and beautiful, intuitive design.
+           insights and beautiful, intuitive design.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
