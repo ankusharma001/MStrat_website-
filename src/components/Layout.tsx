@@ -29,7 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
               className="flex items-center space-x-3"
             >
             <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
-  <img src="/logo.jpeg" alt="Icon" className="w-full h-full object-cover rounded-2xl" />
+  <img src="/logo3.png" alt="Icon" className="w-full h-full object-cover rounded-2xl" />
 </div>
               <span className="text-stone-800 font-bold text-2xl tracking-tight">MStrat</span>
             </motion.div>
