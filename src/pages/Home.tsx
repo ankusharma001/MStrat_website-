@@ -126,12 +126,12 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: "Smart Expense Tracking",
-                description: "Point your camera at any receipt and get instant expense categorization with AI-powered recognition.",
-                icon: Target,
-                color: "from-green-400 to-green-500"
-              },
+              // {
+              //   title: "Smart Expense Tracking",
+              //   description: "Point your camera at any receipt and get instant expense categorization with AI-powered recognition.",
+              //   icon: Target,
+              //   color: "from-green-400 to-green-500"
+              // },
               {
                 title: "Intelligent Budgeting",
                 description: "Get personalized budgeting recommendations based on your spending patterns and financial goals.",

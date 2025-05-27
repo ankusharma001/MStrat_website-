@@ -39,7 +39,7 @@ const Privacy = () => {
         </motion.div>
 
         {/* Security Features */}
-        <motion.div
+        {/* <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -93,7 +93,7 @@ const Privacy = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Privacy Principles */}
         <motion.div
@@ -113,24 +113,24 @@ const Privacy = () => {
             {[
               {
                 title: "Data Minimization",
-                description: "We only collect the data necessary to provide you with the best financial tracking experience. No unnecessary personal information is ever requested or stored."
+                description: "We only collect the data necessary to provide you with the best Expense tracker and management experience. No unnecessary personal information is ever requested or stored.",
               },
               {
                 title: "Your Data, Your Control",
-                description: "You have complete control over your data. Export it, delete it, or take it with you at any time. We believe your financial data belongs to you, not us."
+                description: "You have complete control over your Expense data. Export it, delete it, or take it with you at any time. Your data belongs to you, not us.",
               },
               {
                 title: "No Data Selling",
-                description: "We will never sell, rent, or share your personal financial data with third parties for marketing purposes. Your privacy is not for sale."
+                description: "We will never sell, rent, or share your Expense data with third parties for marketing purposes. Your privacy is not for sale.",
               },
               {
                 title: "Transparent Practices",
-                description: "We're committed to being transparent about how we handle your data. Any changes to our privacy policy will be clearly communicated to you."
+                description: "We're committed to being transparent about how we handle your data. Any changes to our privacy policy will be clearly communicated to you.",
               },
               {
                 title: "Local Processing",
-                description: "Most data processing happens locally on your device. This means your sensitive financial information stays where it belongs - with you."
-              }
+                description: "Most data processing, like calculation of expsense groups expesnse  happens locally on your device. This means your sensitive like Expense information stays with you.",
+              },
             ].map((principle, index) => (
               <motion.div
                 key={index}
